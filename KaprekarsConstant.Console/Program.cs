@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-Console.WriteLine("Enter a 4-digit number:");
+﻿Console.WriteLine("Enter a 4-digit number:");
 string input = Console.ReadLine();
 
 if (!IsValidNumber(input))
