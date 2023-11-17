@@ -29,4 +29,5 @@ Clone the codebase.
 If you're using Visual Studio, press F5 to run the application.
 If you're using the .NET CLI, navigate to your project directory and use the command dotnet run.
 
-![image](https://github.com/Tim-Maes/KaprekarsConstant/assets/91606949/4a830693-e66c-41a8-833e-abe834803d93)
+![image](https://github.com/Tim-Maes/KaprekarsConstant/assets/91606949/c50def7f-98af-4af8-8fbf-b62725a70121)
+
