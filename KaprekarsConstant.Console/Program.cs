@@ -1,10 +1,14 @@
 ﻿Console.WriteLine("Enter a 4-digit number:");
 string input = Console.ReadLine();
+Console.WriteLine();
 
-if (!IsValidNumber(input))
+int steps = 0;
+
+while (!IsValidNumber(input))
 {
-    Console.WriteLine("Invalid number. Please ensure the number is 4 digits with at least two different digits.");
-    return;
+    Console.WriteLine("Invalid number. Please ensure the number is 4 digits with at least two different digits. Try again:");
+    input = Console.ReadLine();
+    Console.WriteLine();
 }
 
 int number = int.Parse(input);
@@ -16,14 +20,18 @@ while (number != 6174)
 }
 
 Console.WriteLine();
-Console.WriteLine("You have reached Kaprekar's constant!");
+Console.WriteLine($"You have reached Kaprekar's constant in {steps} steps!");
 Console.ReadKey();
 
-static bool IsValidNumber(string number)
+bool IsValidNumber(string number)
     => number.Length == 4 && number.Distinct().Count() > 1;
 
-static int KaprekarStep(int number)
+int KaprekarStep(int number)
 {
+    steps++;
+    Console.WriteLine();
+    Console.WriteLine($"Step {steps}:");
+
     char[] digits = number.ToString("D4").ToCharArray();
 
     Array.Sort(digits);
@@ -33,7 +41,10 @@ static int KaprekarStep(int number)
 
     Console.WriteLine($"  {largest}");
     Console.WriteLine($"- {smallest}");
+
     var result = int.Parse(largest) - int.Parse(smallest);
+
     Console.WriteLine($"= {result}");
+
     return result;
 }
